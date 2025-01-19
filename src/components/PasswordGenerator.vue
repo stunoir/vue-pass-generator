@@ -7,6 +7,7 @@
   const incSymbols = ref(true)
   const generatedPassword = ref('')
 
+  // handler to generate the password
   const generatePassword = () => {
     const lowercaseChar = 'abcdefghijklmnopqrstuvwxyz'
     const uppercaseChar = incUppercase.value ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : ''
@@ -18,7 +19,7 @@
     const validLength = Math.max(4, Math.min(passwordLength.value, 32))
     passwordLength.value = validLength
 
-    // generate the password
+    // generate
     let password = ''
     for (let i = 0; i < passwordLength.value; i++) {
       const randomIndex = Math.floor(Math.random() * availableChars.length)
